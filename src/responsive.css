@@ -1,0 +1,220 @@
+/* ==========================================================================
+   Responsif untuk semua perangkat: ponsel kecil (320px) sampai layar lebar (2560px+),
+   portrait dan landscape, layar sentuh, notch (safe area), zoom teks, dan reduced motion.
+   Dimuat TERAKHIR (main.jsx) agar menimpa aturan lain.
+   ========================================================================== */
+
+/* ---------- Dasar ---------- */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:84px}
+body{-webkit-tap-highlight-color:transparent}
+img,svg,video,canvas{max-width:100%}
+img{height:auto}
+table{max-width:100%}
+p,li,td,th,h1,h2,h3,h4,label{overflow-wrap:break-word}
+button,a,input,select,textarea{touch-action:manipulation}
+input,select,textarea{font-size:max(16px,1em)} /* cegah zoom otomatis iOS saat fokus */
+:where(button,[role="button"],a.btn,.btn){min-height:44px}
+.pg-leaflet,.pg-pickmap,.leaflet-container{max-width:100%}
+.leaflet-container img.leaflet-tile{max-width:none!important;max-height:none!important}
+
+/* Grid halaman: anak grid boleh menyusut (sumber utama luapan ke samping) */
+.pg-grid>*,.pg-two>*,.pg-rgrid>*,.pg-panels>*,.pg-deep-body>*,.pg-simgrid>*,
+.about>*,.peta>*,.quiet-grid>*,.foot>*,.steps3>*,.stats>*,.ft-grid>*,.lt-head>*{min-width:0}
+
+/* Notch / safe area */
+.nav,.pg-nav{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right));padding-top:max(14px,env(safe-area-inset-top))}
+.pg-nav{padding-top:max(12px,env(safe-area-inset-top))}
+.ft,footer{padding-bottom:max(28px,env(safe-area-inset-bottom))}
+.pg-wrap,.wrap,.latest{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+
+/* ---------- Navbar landing: menu hamburger ---------- */
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-toggle{display:none;width:44px;height:44px;border-radius:12px;color:#fff;place-items:center}
+.nav-toggle:hover{background:rgba(255,255,255,.14)}
+.nav nav a{display:inline-flex;align-items:center;min-height:44px}
+.nav nav a:focus-visible,.nav-toggle:focus-visible{outline:3px solid #fff;outline-offset:2px;border-radius:6px}
+
+/* ---------- Layar lebar ---------- */
+@media(min-width:1440px){
+  .wrap,.stats,.journey,.circles{max-width:1200px}
+  .about,.peta,.latest{max-width:1280px}
+  .pg-wrap{max-width:1240px}
+  .hero{height:clamp(650px,60vh,780px)}
+  .hero-text{max-width:820px;padding:0 clamp(76px,8vw,160px)}
+}
+@media(min-width:1920px){
+  html{font-size:112.5%}
+  .hero-text h1{font-size:clamp(46px,3.2vw,64px)}
+}
+
+/* ---------- Laptop kecil / tablet landscape ---------- */
+@media(max-width:1100px){
+  .nav nav{gap:22px}
+  .circles{padding:0 24px 40px}
+  .journey{margin-left:24px;margin-right:24px}
+  .stats{margin-left:24px;margin-right:24px}
+  .ft-grid{grid-template-columns:1fr 1fr}
+}
+
+/* ---------- Tablet dan ponsel (<= 820px) ---------- */
+@media(max-width:820px){
+  .nav-toggle{display:grid}
+  .nav{gap:8px;flex-wrap:wrap}
+  /* menu turun sebagai panel di bawah bar */
+  .nav nav{display:none;order:3;flex:0 0 100%;flex-direction:column;gap:0;margin:8px -18px -14px;padding:6px 18px 14px;background:rgba(27,51,85,.97);backdrop-filter:blur(10px)}
+  .nav nav.open{display:flex}
+  .nav nav a{padding:10px 4px;font-size:16px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .nav nav a:last-child{border-bottom:0}
+  .nav nav a::after{display:none}
+  .brand-img{height:36px}
+
+  .hero{height:clamp(420px,72vh,560px)}
+  .hero-text{padding:0 28px;margin-top:0}
+  .hero-text h1{font-size:clamp(28px,6.4vw,40px)}
+  .hero-text p{font-size:clamp(15px,3.6vw,19px)}
+  .dots{bottom:72px}
+  .wave{height:64px}
+
+  .circles{gap:18px 22px;justify-content:center}
+  .circle-item{min-width:84px}
+
+  .steps3{grid-template-columns:minmax(0,1fr);gap:26px}
+  .about,.peta,.quiet-grid,.foot,.stats{grid-template-columns:minmax(0,1fr)}
+  .how{padding-bottom:64px}
+  .how h2{font-size:clamp(26px,6vw,34px)}
+  .lead{max-width:none}
+  .step3 p{max-width:none;font-size:13px}
+  .quiet{margin-top:56px}
+  .quiet h2{font-size:clamp(24px,5.6vw,30px)}
+  .bcol{max-width:none}
+  .map{max-width:min(340px,100%)}
+  .foot-map{text-align:left}
+
+  /* tiket lacak */
+  .track{padding-left:18px;padding-right:18px}
+  .ticket{flex-direction:column;border-radius:18px}
+  .ticket label{padding:18px 20px 12px}
+  .ticket input{font-size:clamp(22px,6vw,28px);min-height:44px}
+  .perf{border-left:0;border-top:2px dashed #cfd6da}
+  .track-btn{width:100%;min-height:64px;color:#fff}
+  .track-btn::before{opacity:1;transform:scale(1);inset:8px}
+
+  /* laporan terbaru */
+  .latest{padding-bottom:56px}
+  .lt-card{flex-basis:min(78vw,300px)}
+  .lt-track{scroll-padding-left:2px;-webkit-overflow-scrolling:touch}
+  .lt-foot{flex-direction:column;align-items:flex-start;gap:0}
+
+  /* halaman dalam */
+  .pg-nav{flex-wrap:wrap;gap:8px 12px}
+  .pg-nav nav{order:3;flex:0 0 100%;width:100%;gap:18px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -4px;padding:0 4px}
+  .pg-nav nav::-webkit-scrollbar{display:none}
+  .pg-brand{font-size:18px;letter-spacing:.12em}
+  .pg-head{padding-top:26px}
+  .pg-head h1{font-size:clamp(22px,6vw,28px);padding-bottom:34px}
+  .pg-grid,.pg-two,.pg-deep-body,.pg-simgrid,.pg-rgrid,.pg-panels{grid-template-columns:minmax(0,1fr)}
+  .pg-card{padding:18px}
+  .pg-leaflet{height:clamp(300px,52vh,420px)}
+  .pg-tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .pg-table{min-width:520px}
+  .pg-seg{max-width:100%;overflow-x:auto}
+  .pg-bar,.pg-switches,.pg-actions{gap:10px}
+  .pg-actions{flex-wrap:wrap}
+  .pg-h2{font-size:clamp(22px,5.6vw,28px)}
+}
+
+/* ---------- Ponsel (<= 600px) ---------- */
+@media(max-width:600px){
+  .wrap,.pg-wrap,.latest{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+  .about{padding:56px 16px 64px}
+  .peta{padding:60px 16px}
+  .journey{margin:28px 16px 80px;padding:26px 18px}
+  .stats{margin-left:16px;margin-right:16px}
+  .steps4{gap:22px 8px}.s4{flex:1 1 42%}
+  .dot{width:60px;height:60px}
+  .circles{padding:6px 16px 26px;gap:16px 14px}
+  .circle-item{min-width:72px;font-size:14px}
+  .btn.sm{padding:9px 20px}
+  .ft{padding:40px 16px 22px}
+  .ft a{width:auto}
+  .soon h1{font-size:clamp(34px,11vw,56px)}
+  .pg-table{min-width:480px}
+  .pg-detail{position:static}
+}
+
+/* ---------- Ponsel kecil (<= 380px, termasuk 320px) ---------- */
+@media(max-width:380px){
+  html{scroll-padding-top:72px}
+  .nav{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+  .brand-img{height:30px}
+  .hero{height:clamp(400px,76vh,520px)}
+  .hero-text{padding:0 18px}
+  .hero-text h1{font-size:26px;letter-spacing:.01em}
+  .hero-text p{font-size:14px}
+  .btn.sm{padding:8px 16px;font-size:12px}
+  .circle-item{min-width:64px;font-size:13px}.circle{width:56px;height:56px}
+  .about h2{font-size:26px}
+  .lt-card{flex-basis:84vw}
+  .ticket input{font-size:20px;letter-spacing:.03em}
+  .pg-nav{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+  .pg-brand img,.pg-brand{max-width:150px}
+  .pg-lapor{padding:10px 18px}
+  .pg-card{padding:14px}
+  .pg-stepper{gap:4px}
+  .pg-pill{padding:0 12px}
+}
+
+/* ---------- Layar pendek (ponsel landscape) ---------- */
+@media(max-height:520px) and (orientation:landscape){
+  .hero{height:max(360px,100vh)}
+  .hero-text h1{font-size:clamp(24px,5vw,34px)}
+  .dots{bottom:64px}
+  .nav nav.open{max-height:calc(100vh - 70px);overflow-y:auto}
+  .pg-leaflet{height:max(260px,70vh)}
+  .soon{min-height:100vh}
+}
+
+/* ---------- Layar sentuh: area ketuk besar, hover tidak "menempel" ---------- */
+@media(hover:none){
+  .circle-item:hover .circle,.step3:hover .card,.lt-card:hover,.btn:hover,.pg-lapor:hover{transform:none;box-shadow:none}
+  .stat:hover{background:none}
+}
+
+/* ---------- Tinggi layar dinamis (bar alamat ponsel) ---------- */
+@supports(height:100dvh){
+  .soon{min-height:100dvh}
+  .pg{min-height:100dvh}
+}
+
+/* ---------- Cetak ---------- */
+@media print{
+  .nav,.pg-nav,.nav-toggle,.dots,.lt-arrows{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
+
+/* ---------- Kurangi gerak ---------- */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+  .bar u{width:var(--w)}
+}
+
+/* iOS: kolom isian minimal 16px agar halaman tidak ter-zoom saat fokus */
+@media(max-width:820px){
+  .pg input,.pg select,.pg textarea{font-size:16px}
+}
+
+@media(max-width:380px){
+  .pg-stepper li{flex:1 1 0;min-width:0;gap:4px}
+  .pg-stepper li:last-child{flex:1 1 0}
+  .pg-stepper button{gap:6px;font-size:13px;min-width:0}
+}
+
+@media(max-width:600px){
+  .ft-grid{grid-template-columns:minmax(0,1fr)}
+}
+
+/* titik slide hero: tetap bulat kecil, area ketuk diperluas lewat bayangan transparan */
+.dots button{min-height:0;min-width:0;position:relative}
+.dots button::after{content:"";position:absolute;inset:-14px -6px}

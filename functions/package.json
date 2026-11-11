@@ -1,0 +1,13 @@
+
+{
+  "name": "ranawarta-functions",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-functions": "^6.0.0"
+  }
+}

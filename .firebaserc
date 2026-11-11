@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "yes": "ranawarta-sidoarjo",
+    "default": "ranawarta-3e56e",
+    "production": "ranawarta-3e56e"
+  },
+  "targets": {
+    "ranawarta-3e56e": {
+      "hosting": {
+        "web": [
+          "ranawarta"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

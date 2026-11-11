@@ -1,0 +1,25 @@
+// Sumber skor banjir (S1 sampai S7). `what` = penjelasan singkat untuk pengunjung. url: null = tautan menyusul.
+export const SOURCES = [
+  { code: "S1", text: "Rencana Kontinjensi Bencana Banjir BPBD Kabupaten Sidoarjo",
+    what: "Dokumen kesiapsiagaan dan penanganan kedaruratan bencana banjir BPBD Kabupaten Sidoarjo yang memetakan zona rawan luapan air dan titik evakuasi di seluruh kecamatan.",
+    url: "https://bpbd.sidoarjokab.go.id" },
+  { code: "S2", text: "Kajian ITS, peta kelas rawan banjir (Ramadhan, 2021)",
+    what: "Skripsi ITS yang memetakan kelas kerawanan banjir seluruh Kabupaten Sidoarjo dengan skoring dan pembobotan parameter. Hasilnya menempatkan Sedati dan Jabon sebagai wilayah dengan porsi kelas rawan terbesar.",
+    url: "https://repository.its.ac.id/83152" },
+  { code: "S3", text: "Pernyataan Kepala Dinas PU BMSDA Sidoarjo (tahun tidak jelas)",
+    what: "Berita Suara Surabaya: Kepala Dinas PU Bina Marga dan Sumber Daya Air menyebut wilayah rawan genangan, antara lain di Taman, Waru, Sidoarjo, Candi, Tanggulangin, dan Porong. Tahun berita belum dipastikan.",
+    url: "https://www.suarasurabaya.net/?p=12888" },
+  { code: "S4", text: "BPBD Sidoarjo via Suara Surabaya, Januari 2020",
+    what: "Kepala BPBD Sidoarjo menyebut potensi banjir tinggi di pesisir timur: Waru, Sedati, Gedangan, Buduran, Candi, Tanggulangin, Porong, Jabon, serta Taman, Krian, dan Balongbendo.",
+    url: "https://www.suarasurabaya.net/?p=351687" },
+  { code: "S5", text: "Skripsi UPN Jatim: banjir lebih dari 50 cm, Januari 2025",
+    what: "Skripsi UPN Veteran Jawa Timur yang mencatat banjir Januari 2025 dengan genangan lebih dari 50 cm di Waru, Gedangan, Candi, dan Porong.",
+    url: "https://repository.upnjatim.ac.id/52834/2/21035010009-Bab%201.pdf" },
+  { code: "S6", text: "Tesis ITS 2018: wilayah rentan banjir (Purnawali)",
+    what: "Tesis ITS yang menganalisis kerentanan banjir Sidoarjo lewat SIG dan penginderaan jauh dengan tujuh parameter. Wilayah rentan: Jabon, Porong, Taman, dan Waru.",
+    url: "https://repository.its.ac.id/49984/1/3515201001_Master_Thesis.pdf" },
+  { code: "S7", text: "Pemetaan Titik Rawan Banjir & Normalisasi Sungai Pemkab Sidoarjo (2023)",
+    what: "Pemetaan wilayah prioritas penanganan genangan dan pengerukan avour sungai oleh Pemkab Sidoarjo melalui Dinas PUBMSDA dan BPBD (meliputi Waru, Tanggulangin, Candi, dan Porong).",
+    url: "https://www.antaranews.com/berita/3408018/pemkab-sidoarjo-keruk-sejumlah-sungai-atasi-banjir" },
+];
+export const SOURCES_INTRO = "S1 sampai S7 adalah tujuh sumber independen. Tiap sumber yang menyebut sebuah kecamatan sebagai wilayah banjir atau genangan menambah satu poin skor banjir kecamatan itu (maksimal 5). Ini menghitung seberapa sering disebut, bukan seberapa parah bahayanya.";

@@ -1,0 +1,560 @@
+/* Admin Dashboard Styling for Ranawarta */
+.adm-page {
+  --navy: #16324F;
+  --blue: #246BFD;
+  --teal: #20B8A6;
+  --deep: #087878;
+  --mist: #B8D8D8;
+  --soft: #E0F0F0;
+  --dark: #103438;
+  background: #F4F7FB;
+  min-height: 100vh;
+  font-family: Manrope, system-ui, sans-serif;
+  color: var(--navy);
+  padding-bottom: 60px;
+}
+
+.adm-login-shell {
+  min-height: 100vh;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at 18% 15%, rgba(32, 184, 166, 0.12), transparent 34%),
+    radial-gradient(ellipse at 88% 85%, rgba(36, 107, 253, 0.08), transparent 32%),
+    #F4F7FB;
+}
+
+.adm-login-card {
+  width: min(100%, 440px);
+  padding: 36px;
+  margin: 0;
+  border-color: #D7E5EC;
+  box-shadow: 0 18px 55px rgba(22, 50, 79, 0.1);
+}
+
+.adm-login-logo {
+  display: block;
+  width: 184px;
+  height: auto;
+  margin-bottom: 28px;
+}
+
+.adm-login-card h1 {
+  margin: 0 0 6px;
+  font: 600 28px/1.25 Lexend, sans-serif;
+  color: var(--navy);
+}
+
+.adm-login-intro {
+  margin: 0 0 26px;
+  color: #64748B;
+  font-size: 14px;
+}
+
+.adm-login-field {
+  display: block;
+  margin-bottom: 18px;
+  color: #344B60;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.adm-login-input {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  margin-top: 7px;
+  padding: 10px 12px;
+  border: 1.5px solid #CBD8E3;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--navy);
+  font: 500 15px Manrope, system-ui, sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.adm-login-input:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(36, 107, 253, 0.13);
+}
+
+.adm-login-submit {
+  width: 100%;
+  min-height: 46px;
+  justify-content: center;
+  margin-top: 4px;
+  border-radius: 9px;
+  font-size: 14px;
+}
+
+.admin-map-container {
+  width: 100%;
+}
+
+.admin-map-controls {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid #DCE7EC;
+  border-radius: 12px;
+  background: #F8FAFC;
+}
+
+.admin-map-canvas {
+  width: 100%;
+  overflow: hidden;
+  border: 1.5px solid var(--mist);
+  border-radius: 14px;
+  background: #E8F0F2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.adm-header {
+  background: #fff;
+  border-bottom: 1.5px solid var(--mist);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.adm-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  border-bottom: 1px solid #EEF2F6;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.adm-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.adm-brand img {
+  height: 38px;
+  width: auto;
+}
+
+.adm-brand h1 {
+  font-family: Lexend, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--navy);
+}
+
+.adm-brand-badge {
+  background: var(--deep);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 99px;
+  letter-spacing: 0.05em;
+}
+
+.adm-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Navigasi Tab */
+.adm-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 8px 24px;
+  overflow-x: auto;
+  background: #FAFCFE;
+  scrollbar-width: thin;
+}
+
+.adm-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: Manrope, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #4A5D6E;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.adm-tab-btn:hover {
+  background: var(--soft);
+  color: var(--navy);
+}
+
+.adm-tab-btn.active {
+  background: var(--navy);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(22, 50, 79, 0.2);
+}
+
+.adm-badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.adm-badge-red {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.adm-badge-blue {
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.adm-tab-btn.active .adm-badge-red {
+  background: #DC2626;
+  color: #fff;
+}
+
+.adm-tab-btn.active .adm-badge-blue {
+  background: var(--blue);
+  color: #fff;
+}
+
+/* Kontainer Utama */
+.adm-container {
+  max-width: 1240px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+}
+
+/* Kartu & Grid */
+.adm-card {
+  background: #fff;
+  border: 1.5px solid var(--mist);
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.adm-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.adm-stat-box {
+  background: #fff;
+  border: 1.5px solid var(--mist);
+  border-radius: 12px;
+  padding: 16px 18px;
+  transition: transform 0.2s;
+}
+
+.adm-stat-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+.adm-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.adm-stat-num {
+  font-family: Lexend, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+
+.adm-stat-sub {
+  font-size: 11.5px;
+  color: #64748B;
+  margin-top: 4px;
+}
+
+/* Bar Chart Sederhana */
+.adm-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.adm-bar-name {
+  width: 170px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.adm-bar-track {
+  flex: 1;
+  height: 12px;
+  background: #E2E8F0;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.adm-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.6s ease;
+}
+
+.adm-bar-val {
+  width: 45px;
+  text-align: right;
+  font-weight: 700;
+}
+
+/* Tabel */
+.adm-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--mist);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.adm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  text-align: left;
+}
+
+.adm-table th {
+  background: #F8FAFC;
+  padding: 12px 14px;
+  font-weight: 700;
+  color: var(--navy);
+  border-bottom: 2px solid var(--mist);
+  white-space: nowrap;
+}
+
+.adm-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #EDF2F7;
+  vertical-align: middle;
+}
+
+.adm-table tbody tr:hover {
+  background: #F8FAFC;
+}
+
+.adm-table-thumb {
+  width: 50px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #CBD5E1;
+  display: block;
+}
+
+/* Tombol Aksi */
+.adm-btn-sm {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.adm-btn-primary {
+  background: var(--blue);
+  color: #fff;
+}
+.adm-btn-primary:hover {
+  background: #1952cc;
+}
+
+.adm-btn-teal {
+  background: var(--deep);
+  color: #fff;
+}
+.adm-btn-teal:hover {
+  background: #065e5e;
+}
+
+.adm-btn-danger {
+  background: #EF4444;
+  color: #fff;
+}
+.adm-btn-danger:hover {
+  background: #DC2626;
+}
+
+.adm-btn-outline {
+  background: #fff;
+  border: 1px solid var(--mist);
+  color: var(--navy);
+}
+.adm-btn-outline:hover {
+  background: var(--soft);
+}
+
+/* Modal Dialog */
+.adm-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 30, 45, 0.6);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.adm-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: modalIn 0.2s ease-out;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.adm-modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  border-bottom: 1.5px solid #EEF2F6;
+}
+
+.adm-modal-head h3 {
+  margin: 0;
+  font-size: 17px;
+  color: var(--navy);
+}
+
+.adm-modal-body {
+  padding: 20px 24px;
+}
+
+.adm-modal-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px;
+  border-top: 1.5px solid #EEF2F6;
+  background: #F8FAFC;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+/* Kotak Peringatan & Banner */
+.adm-alert {
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 13.5px;
+}
+
+.adm-alert-warn {
+  background: #FFFBEB;
+  border: 1px solid #FCD34D;
+  color: #92400E;
+}
+
+.adm-alert-info {
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #1E40AF;
+}
+
+.adm-alert-success {
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  color: #065F46;
+}
+
+/* Print View untuk Ekspor PDF */
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .adm-header,
+  .adm-tabs,
+  .adm-header-actions,
+  .adm-hide-print,
+  .adm-btn-sm,
+  .nav,
+  .ft {
+    display: none !important;
+  }
+  .adm-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+}
+
+@media (max-width: 600px) {
+  .adm-login-shell {
+    padding: 16px;
+  }
+
+  .adm-login-card {
+    padding: 26px 22px;
+  }
+
+  .admin-map-controls {
+    justify-content: flex-start;
+  }
+
+  .admin-map-canvas {
+    height: 420px !important;
+  }
+}

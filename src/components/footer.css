@@ -1,0 +1,19 @@
+/* Footer bersama (semua halaman) */
+.ft{background:#16324F;color:#fff;padding:56px 24px 28px;font-family:Manrope,system-ui,sans-serif}
+.ft-in{max-width:1100px;margin:0 auto}
+.ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1.2fr 1fr;gap:32px;align-items:start}
+.ft-logo{display:inline-block;margin-bottom:18px}.ft-logo img{height:48px;width:auto;display:block}
+.ft-tag{font-family:Lexend,sans-serif;font-size:19px;line-height:1.4;max-width:260px;margin:0 0 12px;color:#fff}
+.ft-note{font-size:13px;color:#B8D8D8;margin:0}
+.ft h2{font:600 13px Manrope,system-ui,sans-serif;letter-spacing:.22em;color:#20B8A6;margin:0 0 14px;text-transform:uppercase}
+.ft ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.ft a{color:#fff;text-decoration:none;display:flex;align-items:center;min-height:44px;font-size:16px;line-height:1.3;transition:color .25s,transform .25s;cursor:pointer;width:max-content;max-width:100%}
+.ft a:hover{color:#20B8A6;transform:translateX(5px)}
+.ft a:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:4px}
+.ft-map svg{width:100%;max-width:260px;height:auto;display:block}
+.ft-map p{font-size:14px;margin:12px 0 0;color:#fff}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.25);margin-top:36px;padding-top:22px;text-align:center}
+.ft-attr{font-size:13px;line-height:1.7;color:#B8D8D8;margin:0 auto 10px;max-width:880px}
+.ft-copy{font-size:14px;margin:0;color:#fff}
+@media(max-width:960px){.ft-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.ft{padding:44px 20px 24px}.ft-grid{grid-template-columns:1fr}.ft-map svg{max-width:210px}}
